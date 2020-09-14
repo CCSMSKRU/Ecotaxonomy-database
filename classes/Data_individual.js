@@ -27,6 +27,7 @@ Model.prototype.removeCascadePrototype = Model.prototype.removeCascade;
 Model.prototype.getForSelectPrototype = Model.prototype.getForSelect;
 
 Model.prototype.init = function (obj, cb) {
+
     if (arguments.length == 1) {
         cb = arguments[0];
         obj = {};
