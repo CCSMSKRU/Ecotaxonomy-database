@@ -56,6 +56,7 @@ Model.prototype.get = function (obj, cb) {
             _t['get_'](obj, cb);
         } else {
             _t.getPrototype(obj, cb);
+
         }
 
     }
