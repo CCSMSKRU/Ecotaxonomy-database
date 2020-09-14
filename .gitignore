@@ -1,0 +1,18 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+.idea/misc.xml
+.idea/workspace.xml
+node_modules/
+public/html/masters/
+/DB/rollbacks/
+/DB/insert/
+/СОПУТСТВУЮЩИЕ ФАЙЛЫ/
+/SYNC_SYSTEM_CORE/
+/config/config_remote.json
+/config/config.json
+/UPDATE
+/DB/excel/
+/config/config_remote_LAN.json
+/config/DEV_LAN_update.json
+/config/DEV_LAN.json
+/models/system/another_tables/*.*

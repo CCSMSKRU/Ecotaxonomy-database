@@ -1,0 +1,311 @@
+<div class="insertIntoHeader">
+    <div data-tab="main" class="modal_tab_switcher active">Main</div>
+	<div data-tab="literature" class="modal_tab_switcher">Literature data</div>
+	<div data-tab="pictures" class="modal_tab_switcher">Pictures</div>
+<!--	<div data-tab="secret" class="modal_tab_switcher">Secret</div>-->
+</div>
+
+<div class="modal_tab active" data-tab="main">
+	<div class="col-md-4">
+
+		<div class="search-for-taxa-holder">
+			<h1 style="margin-top: 50px; ">Taxonomy tree</h1>
+
+			<div class="s-f-t-text">Use taxonomy tree to switch between traits</div>
+
+			<div class="tree-holder">
+				<div class="traits-tree-holder">
+
+				</div>
+				<div class="tree-traits-holder">
+
+				</div>
+			</div>
+
+
+		</div>
+
+
+
+	</div>
+	<div class="col-md-8">
+
+		<h1  class="name-place">{+{name}+}</h1>
+
+		<div class="top-taxon-holder"></div>
+
+		<div class="hr"></div>
+
+		<div>{{{name}}}</div>
+		<div>{{{taxon}}}</div>
+		<!--<div>{{{taxon_level}}}</div>-->
+		<div>{{{trait_type}}}</div>
+		<div>{{{source}}}</div>
+		<div>{{{external_id}}}</div>
+		<div>{{{measurement_protocol}}}</div>
+		<div>{{{trait_expert_level}}}</div>
+		<div>{{{character_category}}}</div>
+
+        <div class="hidden_fields" data-type="NUMBER">{{{min_value}}}</div>
+		<div class="hidden_fields" data-type="NUMBER">{{{max_value}}}</div>
+		<div class="hidden_fields" data-type="FLOAT">{{{default_unit}}}</div>
+		<div class="hidden_fields" data-type="TEXT">{{{max_characters}}}</div>
+		<div class="hidden_fields" data-type="TRAIT">{{{trait_category}}}</div>
+		<div class="hidden_fields" data-type="CHARACTER">{{{character_category}}}</div>
+
+
+		<br/>
+		<div>{{{is_ecokeys}}}</div>
+		<div>{{{is_taxonomic}}}</div>
+		<div>{{{is_individual}}}</div>
+		<div>{{{is_main_filter}}}</div>
+		<div>{{{inherit}}}</div>
+		<br/>
+		<div>{{{definition}}}</div>
+
+		<div class="trait-select-values-holder hidden_fields" data-type="SELECT">
+			<div class="add-trait-value"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add value</div>
+			<div class="trait-select-value-add-holder-content">
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal_tab" data-tab="literature">
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name_full">{+{name}+}</span>
+		</h1>
+		<div class="add-taxon-lit-data" data-is-taxon="true"><i class="fa fa-plus"></i> Add literature data</div>
+	</div>
+	<div class="hr"></div>
+	<div class="block35">
+		<div class="form-literature-data-holder"></div>
+	</div>
+</div>
+
+<div class="modal_tab" data-tab="pictures">
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name_full">{+{name}+}</span>
+		</h1>
+	</div>
+	<div class="hr"></div>
+	<div class="block35">
+		<div class="taxon-pictures-holder ">
+			<h3 class="traits-hl">Pictures:
+				<div class="load-pictures load-pictures-taxon"><i class="fa fa-upload"></i>&nbsp;&nbsp;Load pictures</div>
+				<div class="modify-pictures-trait"><i class="fa fa-edit"></i>&nbsp;&nbsp;Modify pictures</div>
+			</h3>
+			<div class="taxon-pictures any-pictures-holder row gallery_wrapper"></div>
+		</div>
+	</div>
+</div>
+
+<style>
+
+	.ch_wrapper {
+		margin: 25px;
+		padding: 25px;
+		background: #f7f9fa;
+	}
+
+	.ch_header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.ch_wrapper .ct-pagination-wrapper {
+		display: flex;
+	}
+
+	.ch_button {
+		position: relative;
+		height: 26px;
+		width: 200px;
+		border-radius: 3px;
+		background-color: #82b1b9;
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		overflow: hidden;
+	}
+	.ch_button:hover {
+		box-shadow: 0 3px 8px 0 rgba(0,0,0,.16);
+	}
+
+	.ch_button input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		cursor: pointer;
+	}
+
+	.ch_table {
+		padding-bottom: 25px;
+		margin-top: 25px;
+		border-radius: 4px;
+		overflow: auto;
+	}
+
+	.ch_table thead {
+		border-bottom: 2px solid #ddd;
+	}
+
+	.ch_table .th_content .title,
+	.ch_table .td_content .value {
+		user-select: text;
+	}
+
+	.ch_table .th_content {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		height: 42px;
+		cursor: pointer;
+		padding: 15px 35px 15px 15px;
+	}
+
+	.ch_table .th_content .direction {
+		position: absolute;
+		top: calc(50% - 9px);
+		right: 15px;
+	}
+
+	.ch_table .th_content .title {
+		font-weight: bold;
+		font-size: 12px;
+	}
+
+	.ch_table .th_content .status {
+		font-size: 12px;
+		font-weight: normal;
+		color: #ccc;
+		margin-left: 5px;
+	}
+
+	.ch_table .td_content {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		height: 42px;
+		max-width: 300px;
+	}
+
+	.ch_table .td_content .value {
+		font-size: 13px;
+		white-space: nowrap;
+		max-width: 100%;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.ch_status {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-top: 50px;
+	}
+
+	.ch_status.hidden {
+		display: none;
+	}
+
+	.ch_loader.hidden {
+		display: none;
+	}
+
+	.ch_loader svg {
+		height: 35px;
+	}
+
+	.ch_status_message {
+		margin-top: 10px;
+	}
+
+
+	.badge {
+		width: 100px;
+	}
+
+	.badge--error {
+		background: tomato;
+	}
+
+	.badge--warning {
+		background: #f5cc27;
+	}
+
+	.badge--info {
+		background: #aaa;
+	}
+
+	.badge--edited {
+		background: #00bfff;
+	}
+
+	.badge--approved {
+		background: #9bbb7f;
+	}
+
+	.badge--white {
+		background: #fff;
+	}
+
+</style>
+
+<div class="modal_tab" data-tab="secret">
+	<div class="ch_wrapper">
+		<div class="ch_header">
+			<div class="ch_button">
+				<div class="title">Select file</div>
+				<input type="file" id="ch_upload_file_input">
+			</div>
+			<div class="ch_button" id="download_file">
+				<div class="title">Скачать файл</div>
+			</div>
+			<div class="ct-pagination-wrapper">
+				<div class="ct-pagination-item ct-pagination-prev">
+					<i class="fa fa-angle-left"></i>
+				</div>
+				<div class="ct-pagination-current">
+					<input type="text" class="ct-pagination-current-input" value="1">
+				</div>
+				<div class="ct-pagination-item ct-pagination-next">
+					<i class="fa fa-angle-right"></i>
+				</div>
+				<div class="ct-pagination-pagesCount">Pages: 1</div>
+			</div>
+		</div>
+		<div class="ch_status hidden">
+			<div class="ch_loader hidden">
+				<svg xmlns="http://www.w3.org/2000/svg" width="135" height="135" viewBox="0 0 135 135" fill="#74bc27">
+					<path d="M67.447 58c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10zm9.448 9.447c0 5.523 4.477 10 10 10 5.522 0 10-4.477 10-10s-4.478-10-10-10c-5.523 0-10 4.477-10 10zm-9.448 9.448c-5.523 0-10 4.477-10 10 0 5.522 4.477 10 10 10s10-4.478 10-10c0-5.523-4.477-10-10-10zM58 67.447c0-5.523-4.477-10-10-10s-10 4.477-10 10 4.477 10 10 10 10-4.477 10-10z" transform="rotate(-55.5126 67 67)">
+						<animateTransform attributeName="transform" type="rotate" from="0 67 67" to="-360 67 67" dur="2.5s" repeatCount="indefinite"/>
+					</path>
+					<path d="M28.19 40.31c6.627 0 12-5.374 12-12 0-6.628-5.373-12-12-12-6.628 0-12 5.372-12 12 0 6.626 5.372 12 12 12zm30.72-19.825c4.686 4.687 12.284 4.687 16.97 0 4.686-4.686 4.686-12.284 0-16.97-4.686-4.687-12.284-4.687-16.97 0-4.687 4.686-4.687 12.284 0 16.97zm35.74 7.705c0 6.627 5.37 12 12 12 6.626 0 12-5.373 12-12 0-6.628-5.374-12-12-12-6.63 0-12 5.372-12 12zm19.822 30.72c-4.686 4.686-4.686 12.284 0 16.97 4.687 4.686 12.285 4.686 16.97 0 4.687-4.686 4.687-12.284 0-16.97-4.685-4.687-12.283-4.687-16.97 0zm-7.704 35.74c-6.627 0-12 5.37-12 12 0 6.626 5.373 12 12 12s12-5.374 12-12c0-6.63-5.373-12-12-12zm-30.72 19.822c-4.686-4.686-12.284-4.686-16.97 0-4.686 4.687-4.686 12.285 0 16.97 4.686 4.687 12.284 4.687 16.97 0 4.687-4.685 4.687-12.283 0-16.97zm-35.74-7.704c0-6.627-5.372-12-12-12-6.626 0-12 5.373-12 12s5.374 12 12 12c6.628 0 12-5.373 12-12zm-19.823-30.72c4.687-4.686 4.687-12.284 0-16.97-4.686-4.686-12.284-4.686-16.97 0-4.687 4.686-4.687 12.284 0 16.97 4.686 4.687 12.284 4.687 16.97 0z" transform="rotate(242.348 67 67)">
+						<animateTransform attributeName="transform" type="rotate" from="0 67 67" to="360 67 67" dur="8s" repeatCount="indefinite"/>
+					</path>
+				</svg>
+			</div>
+			<div class="ch_status_message">Processing...</div>
+		</div>
+		<div class="ch_table">
+			<table>
+				<thead>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

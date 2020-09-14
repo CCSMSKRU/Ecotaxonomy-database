@@ -1,0 +1,315 @@
+<style>
+	.header_n_buttons {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	.header_n_buttons h3 {
+		margin-right: auto;
+	}
+
+	.select_values_holder {
+		padding: 10px;
+		border: 1px solid #d1d1d1;
+		border-top: none;
+	}
+	.select_values_holder .trait-select-value-add-holder-content {
+		padding: 10px 40px 0 0;
+	}
+	.select_values_holder .trait-select-value-remove.fa.fa-trash-o {
+		right: -25px;
+		top: -1px;
+	}
+	.select_values_holder .add-trait-value.green_bttn_style {
+		margin: 0;
+	}
+	.select_values_holder textarea, .select_values_holder input {
+		margin: 0 !important;
+	}
+	.select_values_holder .new-trait-value label {
+		margin-top: 10px;
+	}
+	.select_values_holder .new-trait-value .trait-select-value-remove.fa.fa-trash-o {
+		right: 5px;
+		top: 4px;
+	}
+
+</style>
+
+
+<div class="insertIntoHeader">
+    <div data-tab="main" class="modal_tab_switcher active">Main</div>
+	<div data-tab="memninf" class="modal_tab_switcher">Members and infrastructure</div>
+	<div data-tab="study" class="modal_tab_switcher">Study design</div>
+	<div data-tab="organisms" class="modal_tab_switcher">Organisms</div>
+	<!--<div data-tab="locations" class="modal_tab_switcher">Locations</div>-->
+</div>
+
+
+<div class="modal_tab active" data-tab="main">
+
+    <div class="block35">
+        <h1 class="name-place">{+{name}+}</h1>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="col-md-12">
+
+        <div class="col-md-3">
+	        <div class="vert-orient">{{{image}}}</div>
+
+			<h2 style="margin-bottom: 40px;">Projects tree</h2>
+
+            <div class="proj-tree-holder">
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="buttons_container" style=" margin: 30px 0; ">
+                <div class="green_bttn_style add-child-project"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add child project</div>
+                <div class="green_bttn_style add_new_organisms"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add new organisms</div>
+				<div class="green_bttn_style edit_project_collection"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit project collection</div>
+				<div class="green_bttn_style open-sequence-collection"><i class="fa fa-inbox"></i>&nbsp;&nbsp;Sequence collection</div>
+				<!--<div class="green_bttn_style export_project"><i class="fa fa-save"></i>&nbsp;&nbsp;Export project</div>-->
+				<div class="green_bttn_style import_data"><i class="fa fa-save"></i>&nbsp;&nbsp;Import data</div>
+            </div>
+            <div class="col-md-12">
+                <div class="vert-orient">{{{name}}}</div>
+                <div class="vert-orient">{{{title}}}</div>
+                <div class="vert-orient">{{{date_start}}}</div>
+                <div class="vert-orient">{{{date_finish}}}</div>
+                <div class="vert-orient">{{{parent_name}}}</div>
+	            <div class="vert-orient">{{{foundation}}}</div>
+	            <div class="vert-orient">{{{description}}}</div>
+                <div class="vert-orient">{{{image}}}</div>
+                <div class="vert-orient">{{{big_image}}}</div>
+	            <div class="vert-orient">{{{visible_on_site}}}</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal_tab" data-tab="memninf">
+	<div class="block35">
+		<h1 class="name-place">{+{name}+}</h1>
+	</div>
+	<div class="hr"></div>
+	<div class="col-md-12">
+		<div class="in_tab_tabs_wrapper">
+			<div class="itt_header">
+				<div class="itt_option active" data-tab="members">Members</div>
+				<div class="itt_option" data-tab="organizations">Organizations</div>
+				<div class="itt_option" data-tab="storages">Storages</div>
+			</div>
+			<div class="itt_tabs">
+				<div class="itt_tab active" data-tab="members">
+					<h5>Project members can open the project form. You can configure flexible accesses for them.</h5>
+					<div class="content">
+						<div class="left_30">
+
+							<h3>Parental members:</h3>
+
+							<div class="parental-members-holder">
+
+							</div>
+
+						</div>
+						<div class="right_70 proj-members-table-holder">
+
+							<div class="header_n_buttons">
+								<h3>Project members:</h3>
+								<div class="edit-project-members"><i class="fa fa-edit"></i>&nbsp;&nbsp;Edit</div>
+							</div>
+
+							<div class="project-members-holder">
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="itt_tab" data-tab="organizations">
+					<h5>You may list organizations, involved in your project.</h5>
+<!--					<div data-tbls="project_company.tbl_project_company" class="content_100 fn-child-tbl-holder"></div>-->
+
+                    <div class="add_organization green_bttn_style"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add new organization</div>
+
+					<div class="two_columns_meas organizations"></div>
+				</div>
+				<div class="itt_tab" data-tab="storages">
+					<div style="display: flex; align-items: flex-start; justify-content: space-between">
+						<h5>Storages are containers, boxes or any other storage facilities where organisms are deposited.</h5>
+					</div>
+					<div class="content">
+						<div class="left_30">
+							<h3>Tree of storages</h3>
+							<div class="inline_form_cs_controls storage_controls">
+								<div class="add_storage green_bttn_style"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add new storage</div>
+								<div class="copy_storage green_bttn_style" style="display: none"><i class="fa fa-plus"></i>&nbsp;&nbsp;Duplicate storage</div>
+								<div class="add_child_storage green_bttn_style" style="display: none"><i class="fa fa-plus"></i>&nbsp;&nbsp;Create child storage</div>
+								<div class="remove_storage green_bttn_style red" style="display: none"><i class="fa fa-minus"></i>&nbsp;&nbsp;Remove storage</div>
+
+							</div>
+							<div class="storages-tree-holder"></div>
+						</div>
+						<div class="right_70 storage-table-holder">
+
+							<div class="storage-data-holder"></div>
+
+							<div class="inline_form_cs_controls">
+								<div class="save-traits save-storage" style="margin-top:95px ; margin-right: 50px; display: none;">
+									<i class="fa fa-save"></i>
+								</div>
+							</div>
+
+							<div class="inline_form_cs current-storage-holder">
+								<div class="storage-placeholder">Please, select a storage from plots tree.</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal_tab" data-tab="study">
+	<div class="block35">
+		<h1 class="name-place">{+{name}+}</h1>
+	</div>
+	<div class="hr"></div>
+	<div class="col-md-12">
+		<div class="in_tab_tabs_wrapper">
+			<div class="itt_header">
+				<div class="itt_option active" data-tab="factors">Factors</div>
+				<div class="itt_option" data-tab="plots">Plots</div>
+				<div class="itt_option" data-tab="events">Sampling events</div>
+			</div>
+			<div class="itt_tabs">
+				<div class="itt_tab active" data-tab="factors">
+					<h5>Environmental factors are characteristics of environment like climatic conditions or chemical
+						composition. You can add factors from the common list that is edited in a separate form outside
+						the project. The factors can be linked to plots/samples.</h5>
+					<div class="two_columns_meas factors"></div>
+				</div>
+				<div class="itt_tab" data-tab="plots">
+					<h5>Plots are sites with certain geographical location where organisms are collected. Alternatively, those can be experimental treatments or microcosms.</h5>
+					<div class="content">
+						<div class="left_30">
+							<h3>Tree of plots</h3>
+                            <div class="inline_form_cs_controls plot_controls">
+                                <div class="add_node green_bttn_style"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add new plot</div>
+                                <div class="copy_node green_bttn_style" style="display: none"><i class="fa fa-plus"></i>&nbsp;&nbsp;Duplicate plot</div>
+                                <div class="add_child_node green_bttn_style" style="display: none"><i class="fa fa-plus"></i>&nbsp;&nbsp;Create child plot</div>
+                                <div class="remove_node green_bttn_style red" style="display: none"><i class="fa fa-minus"></i>&nbsp;&nbsp;Remove plot</div>
+                            </div>
+                            <div class="plots-tree-holder"></div>
+						</div>
+						<div class="right_70 proj-members-table-holder">
+							<div class="plot-data-holder">
+							</div>
+							<div class="inline_form_cs_controls">
+								<div class="save-traits save-plot" style="margin-top:95px ; margin-right: 50px; display: none;"><i class="fa fa-save"></i></div>
+							</div>
+							<div class="inline_form_cs current-plot-holder">
+								<div class="plots-placeholder">Please, select a plot from plots tree.</div>
+							</div>
+							<div class="plot-factors-holder">
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="itt_tab" data-tab="events">
+					<div style="display: flex; align-items: flex-start; justify-content: space-between">
+						<h5>Sampling events are groups of samples / organisms that are taken from selected plots in a given period of time using a given method.</h5>
+						<div class="green_bttn_style export_sampling_events"><i class="fa fa-save"></i>&nbsp;&nbsp;Export sampling events</div>
+					</div>
+					<div class="sampling-event-table-holder content in_project">
+						<div class="left_30">
+							<h3>Tree of sampling events</h3>
+							<div class="inline_form_cs_controls events_controls">
+								<div class="add_node green_bttn_style"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add new event</div>
+								<div class="copy_node green_bttn_style" style="display: none"><i class="fa fa-plus"></i>&nbsp;&nbsp;Duplicate event</div>
+								<div class="add_child_node green_bttn_style" style="display: none"><i class="fa fa-plus"></i>&nbsp;&nbsp;Create child event</div>
+								<div class="remove_node green_bttn_style red" style="display: none"><i class="fa fa-minus"></i>&nbsp;&nbsp;Remove event</div>
+							</div>
+							<div class="events-tree-holder"></div>
+						</div>
+						<div class="right_70">
+							<div class="event-data-holder"></div>
+							<div class="inline_form_cs_controls">
+								<div class="save-traits save-sampling-event" style="margin-top:95px ; margin-right: 50px;"><i class="fa fa-save"></i></div>
+							</div>
+							<div class="inline_form_cs current_event_wrapper">
+								<div class="plots-placeholder">Please, select a event from events tree.</div>
+                            </div>
+
+                            <div data-tbls-lazyLoad="sampling_event_member.tbl_sampling_event_member" class="fn-child-tbl-holder marTop10 sample-tbls-holder"></div>
+
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal_tab" data-tab="organisms">
+	<div class="block35">
+		<h1 class="name-place">{+{name}+}</h1>
+	</div>
+	<div class="hr"></div>
+	<div class="col-md-12">
+		<div class="in_tab_tabs_wrapper">
+			<div class="itt_header">
+				<div class="itt_option active" data-tab="measurements">Measurements</div>
+				<div class="itt_option" data-tab="avail">Default taxa</div>
+			</div>
+			<div class="itt_tabs">
+				<div class="itt_tab active" data-tab="measurements">
+					<h5>Measurements are characteristic that can be applied to individual organisms. Here you can select measurements you want to perform on the organisms in the project.</h5>
+					<div class="two_columns_meas measurements"></div>
+				</div>
+				<div class="itt_tab" data-tab="avail">
+					<h5>Here you can select focal taxa you want to work with in the project. Those taxa will be used as the default taxa when you will add organisms.</h5>
+					<div class="two_columns_meas taxa"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--<div class="modal_tab" data-tab="locations">-->
+
+<!--	<div class="block35">-->
+<!--		<h1 class="name-place">{+{name}+}</h1>-->
+<!--		<h5>&nbsp;</h5>-->
+<!--	</div>-->
+
+<!--	<div class="hr"></div>-->
+
+<!--	<div class="col-md-3">-->
+<!--		<div class="block35">-->
+
+<!--			<h3>Parental locations:</h3>-->
+
+<!--			<div class="form-parental-locations-holder"></div>-->
+
+<!--		</div>-->
+<!--	</div>-->
+<!--	<div class="col-md-9">-->
+<!--		<div class="locations-table-holder tbl-holder">-->
+
+<!--			<h3 class="tbl-title">Locations</h3>-->
+
+<!--			<div data-tbls="project_location.tbl_project_location" class="fn-child-tbl-holder marTop10"></div>-->
+
+<!--		</div>-->
+<!--	</div>-->
+
+<!--</div>-->

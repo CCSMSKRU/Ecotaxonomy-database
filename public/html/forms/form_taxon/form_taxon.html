@@ -1,0 +1,419 @@
+<style>
+
+	.trait_per_sex_header {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: center;
+		margin: 25px;
+	}
+
+	.gender_traits_wrapper {
+	}
+
+	.gender_trait_wrapper {
+		margin: 10px 0;
+	}
+	.gender_trait_wrapper, .gender_traits_titles {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.gender_trait_wrapper .cell,
+	.gender_traits_titles .cell {
+		width: calc((100% - 120px) / 4);
+		margin-right: 10px;
+	}
+
+	.gender_traits_titles .cell {
+		text-align: center;
+	}
+
+	.gender_trait_wrapper .select2-container {
+		margin: 0;
+	}
+
+	.gender_trait_wrapper .usual_type {
+		width: 100%;
+		padding: 5px 10px;
+		outline: none;
+		border: 1px solid #d1d1d1;
+		box-shadow: none;
+		line-height: 22px;
+	}
+
+	.gender_trait_wrapper .tep-button {
+		position: static;
+		margin: 0;
+		width: 30px;
+		text-align: center;
+	}
+
+	.gender_trait_wrapper .tep-litdata {
+		margin-left: 10px;
+	}
+
+	.child-level-pictures-holder {
+		display: none;
+	}
+
+
+	#show_map {
+		position: relative;
+		min-height: 25px;
+		cursor: pointer;
+	}
+	#show_map img {
+		width: 100%;
+		max-height: 0;
+		transition: max-height 0.2s ease;
+	}
+	#show_map.show img {
+		max-height: 1000px;
+	}
+	#show_map .title {
+		line-height: 1em;
+		position: absolute;
+		top: 5px;
+		margin: 0;
+	}
+	#show_map .to_hide {
+		display: none;
+	}
+	#show_map.show .to_hide {
+		display: block;
+	}
+	#show_map.show .to_show {
+		display: none;
+	}
+</style>
+
+<div class="insertIntoHeader">
+	<div data-tab="main" class="modal_tab_switcher active">Main</div>
+	<div data-tab="distribution" class="modal_tab_switcher">Distribution</div>
+	<div data-tab="habitats" class="modal_tab_switcher">Habitats</div>
+	<div data-tab="literature" class="modal_tab_switcher">Literature data</div>
+	<div data-tab="pictures" class="modal_tab_switcher">Pictures</div>
+	<div data-tab="voucher" class="modal_tab_switcher">Vouchers</div>
+	<div data-tab="comments" class="modal_tab_switcher">Comments</div>
+</div>
+
+
+<div class="modal_tab active" data-tab="main">
+
+	<div class="row">
+		<div class="col-md-4">
+
+
+			<div class="search-for-taxa-holder">
+				<h1 style="margin-top: 50px; ">Tree of life</h1>
+
+				<div class="s-f-t-text">Browse tree to switch between taxa</div>
+
+				<!--<input type="text" class="form-control search-for-taxa-tree" placeholder="Search for taxa"/>-->
+
+				<div class="tree-holder">
+					<div class="taxon-tree-holder">
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="col-md-8">
+
+			<div>
+				<div class="s-f-t-text synonyms-data-holder" style="margin-top: 20px;">
+					<div class="synonyms-tree-holder"></div>
+				</div>
+
+			</div>
+
+			<h1 class="name-place" style="margin-top: 20px;">
+				<span class="fn-inline-field" data-column="name_full">{+{name_full}+}</span>
+			</h1>
+			<div class="taxon-ids-holder">
+				<div class="taxon-ids">GBIF id: <span class="taxon-ids-value fn-inline-field"
+				                                      data-column="gbif_taxonID">{+{gbif_taxonID}+}</span></div>
+				<div class="taxon-ids">Ecotax id: <span class="taxon-ids-value fn-inline-field" data-column="id">{+{id}+}</span>
+				</div>
+			</div>
+
+			<div class="hr"></div>
+
+			<div class="all-traits-holder">
+
+				<div class="row">
+
+					<div class="col-md-4">
+						<div class="vert-orient">{{{parent}}}</div>
+					</div>
+					<div class="col-md-4">
+						<div class="vert-orient">{{{custom_name}}}</div>
+					</div>
+					<div class="col-md-4">
+						<div class="vert-orient">{{{gbif_scientificNameAuthorship}}}</div>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 25px;">
+					<div class="col-md-4">
+						<div class="vert-orient">{{{creation_project}}}</div>
+					</div>
+					<div class="col-md-4">
+						<div class="vert-orient">{{{similarity_link}}}</div>
+					</div>
+					<!--<div class="col-md-4"><div class="vert-orient">-->
+					<!--<div data-type="text" class="fn-field fn-readonly-field" data-value="" data-column=""><label>Distribution:</label><div class="fn-readonly">In proccess</div></div>-->
+					<!--</div></div>-->
+					<div class="col-md-4">
+						<div class="vert-orient">{{{level_name}}}</div>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 25px;">
+					<div class="col-md-4">
+						<div class=" ">
+							<div class="vert-orient">{{{show_on_site}}}</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class=" ">
+							<div class="vert-orient">{{{approved_by_expert}}}</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="vert-orient">{{{status}}}</div>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 25px">
+					<div class="col-md-4"></div>
+					<div class="col-md-4"></div>
+					<!--<div class=" flLeft"><div class="vert-orient">{{{has_parameters}}}</div></div>-->
+					<div class="col-md-4">
+						<div class="vert-orient">
+							<div id="actual-taxon-holder">
+								{{{actual_taxon}}}
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="traits-two-columns">
+
+					<div class="save-traits"><i class="fa fa-save"></i></div>
+
+					<div class="ic-holder">
+						<h3 class="traits-hl">IDENTIFICATION CHARACTERS:</h3>
+
+
+						<div class="sc_taxon-traits-holder">
+							<div class="ic-taxon-traits">
+								<div class="no-traits"><i class="fa fa-spinner fa-spin"></i> Loading identification
+									characters...
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="et-holder">
+
+						<h3 class="traits-hl">ECOLOGICAL TRAITS:</h3>
+
+
+						<div class="sc_taxon-traits-holder">
+							<div class="taxon-traits">
+								<div class="no-traits"><i class="fa fa-spinner fa-spin"></i> Loading traits...</div>
+							</div>
+						</div>
+
+					</div>
+
+
+				</div>
+
+
+				<div class="ap-holder">
+					<div class="add-avail-param-btn"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add available trait</div>
+					<!--<div class="add-param-btn"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add trait</div>-->
+					<div class="ap-fields"></div>
+					<div class="add-av-traits-holder">
+
+					</div>
+				</div>
+
+				<!--паренты и сейм левел сделать поменбьше, загружать тоько этого уровня-->
+
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="modal_tab" data-tab="distribution">
+	<div class="block35">
+		<h1 class="name-place" style="margin-top: 25px;">
+			<span class="fn-inline-field" data-column="name">{+{name}+}</span>
+		</h1>
+	</div>
+	<div class="hr"></div>
+	<div class="block35">
+		<div class="col-md-4">
+			<h1 style="margin-top: 0; ">Tree of locations</h1>
+			<div class="s-f-t-text">Browse tree to switch between locations</div>
+			<div class="location_tree_holder"></div>
+		</div>
+		<div class="col-md-8">
+			<h4>Select a location in the tree and click the button "Bind taxon to location"</h4>
+			<div id="show_map">
+				<h4 class="title to_hide">
+					<i class="fa fa-question-circle"></i>
+					&nbsp;Click to hide map
+				</h4>
+				<h4 class="title to_show">
+					<i class="fa fa-question-circle"></i>
+					&nbsp;Click to show map
+				</h4>
+				<img src="/upload/docs/search-map.png" class="s1-search-map" />
+			</div>
+			<div style="margin: 25px 0" class="green_bttn_style add_location">Bind taxon to location</div>
+			<div data-tbls="taxon_location.tbl_taxon_location" class="fn-child-tbl-holder marTop10"></div>
+
+		</div>
+	</div>
+</div>
+
+<div class="modal_tab" data-tab="habitats">
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name">{+{name}+}</span>
+		</h1>
+	</div>
+	<div class="hr"></div>
+	<div class="block35">
+		<div class="col-md-4">
+			<h1 style="margin-top: 0;">Tree of Habitats</h1>
+			<div class="s-f-t-text">Browse tree to switch between habitats</div>
+			<div class="habitat_tree_holder"></div>
+		</div>
+		<div class="col-md-8">
+			<h4>Select a habitat in the tree and click the button "Bind taxon to habitat"</h4>
+			<div style="margin-top: 20px;" class="pdf-opener-habitat_help"><h5><i class="fa fa-question-circle"></i>
+				Click to view file with descriptions</h5></div>
+			<div style="margin: 25px 0;" class="green_bttn_style add_habitat">Bind taxon to habitat</div>
+			<div class="fn-child-tbl-holder marTop10" data-tbls="taxon_habitat.tbl_taxon_habitat"></div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal_tab" data-tab="literature">
+
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name">{+{name}+}</span>
+		</h1>
+		<div class="add-taxon-lit-data" data-is-taxon="true"><i class="fa fa-plus"></i> Add literature data</div>
+	</div>
+
+
+	<div class="hr"></div>
+
+	<div class="block35">
+
+		<div class="form-literature-data-holder"></div>
+
+		<!--<div style="margin-top: 40px;" class="">-->
+		<!--<div data-tbls="taxon_literature_data.tbl_taxon_literature_data" class="fn-child-tbl-holder marTop10"></div>-->
+		<!--</div>-->
+	</div>
+
+
+</div>
+
+<div class="modal_tab" data-tab="pictures">
+
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name">{+{name}+}</span>
+		</h1>
+	</div>
+
+	<div class="hr"></div>
+
+	<div class="block35">
+		<div class="taxon-pictures-holder ">
+			<h3 class="traits-hl">Taxon pictures:
+				<div class="load-pictures load-pictures-taxon"><i class="fa fa-upload"></i>&nbsp;&nbsp;Load pictures
+				</div>
+				<div class="modify-pictures-taxon"><i class="fa fa-edit"></i>&nbsp;&nbsp;Modify pictures</div>
+			</h3>
+			<div class="taxon-pictures taxon_pictures_flex any-pictures-holder row gallery_wrapper"></div>
+		</div>
+
+		<div class="synonyms_pictures_holder">
+			<h3 class="traits-hl">Synonyms pictures:</h3>
+			<div class="synonyms_pictures any-pictures-holder collapsed row">
+
+			</div>
+		</div>
+
+		<div class="child-level-pictures-holder">
+			<h3 class="traits-hl">Child taxon pictures:</h3>
+			<div class="child-level-pictures any-pictures-holder collapsed row">
+
+			</div>
+		</div>
+
+		<div class="parental-pictures-holder">
+			<h3 class="traits-hl">Parental pictures:</h3>
+			<div class="parental-pictures any-pictures-holder collapsed row">
+
+			</div>
+		</div>
+
+		<div class="same-level-pictures-holder">
+			<h3 class="traits-hl">Same level pictures:</h3>
+			<div class="same-level-pictures any-pictures-holder collapsed row">
+
+			</div>
+		</div>
+
+	</div>
+
+	<div id="pic_author_select2" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+
+</div>
+
+
+<div class="modal_tab" data-tab="voucher">
+
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name">{+{name}+}</span>
+		</h1>
+	</div>
+
+	<div class="block35">
+		<div data-tbls="data_individual.tbl_data_individual_voucher" class="fn-child-tbl-holder marTop10"></div>
+	</div>
+</div>
+
+<div class="modal_tab" data-tab="comments">
+
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name">{+{name}+}</span>
+		</h1>
+	</div>
+
+	<div class="block35">
+		<div data-tbls="taxon_comment.tbl_taxon_comment" class="fn-child-tbl-holder marTop10"></div>
+	</div>
+</div>

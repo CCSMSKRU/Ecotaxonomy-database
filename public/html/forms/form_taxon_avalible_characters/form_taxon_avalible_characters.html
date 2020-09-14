@@ -1,0 +1,96 @@
+<div class="insertIntoHeader">
+    <div data-tab="main" class="modal_tab_switcher active">Main</div>
+	<div data-tab="literature" class="modal_tab_switcher">Literature data</div>
+	<div data-tab="pictures" class="modal_tab_switcher">Pictures</div>
+</div>
+
+
+<div class="modal_tab active" data-tab="main">
+	<div class="col-md-4">
+
+		<div class="search-for-taxa-holder">
+			<h1 style="margin-top: 50px; ">Taxonomy tree</h1>
+
+			<div class="s-f-t-text">Use taxonomy tree to switch between traits</div>
+
+			<div class="tree-holder">
+				<div class="traits-tree-holder">
+
+				</div>
+				<div class="tree-traits-holder">
+
+				</div>
+			</div>
+
+
+		</div>
+
+
+
+	</div>
+	<div class="col-md-8">
+
+		<h1  class="name-place">{+{name}+}</h1>
+
+		<div class="top-taxon-holder"></div>
+
+		<div class="hr"></div>
+
+		<div>{{{name}}}</div>
+		<div>{{{taxon}}}</div>
+		<div>{{{trait_type}}}</div>
+		<div>{{{source}}}</div>
+		<div>{{{external_id}}}</div>
+		<div>{{{measurement_protocol}}}</div>
+		<div class="hidden_fields" data-type="NUMBER">{{{min_value}}}</div>
+		<div class="hidden_fields" data-type="NUMBER">{{{max_value}}}</div>
+		<div class="hidden_fields" data-type="FLOAT">{{{default_unit}}}</div>
+		<div class="hidden_fields" data-type="TEXT">{{{max_characters}}}</div>
+
+		<div class="hidden_fields" data-type="TRAIT">{{{trait_category}}}</div>
+		<div class="hidden_fields" data-type="CHARACTER">{{{character_category}}}</div>
+		<div>{{{trait_expert_level}}}</div>
+		<div>{{{inherit}}}</div>
+
+		<div>{{{definition}}}</div>
+
+		<div class="trait-select-values-holder hidden_fields" data-type="SELECT">
+			<div class="add-trait-value"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add value</div>
+			<div class="trait-select-value-add-holder-content">
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal_tab" data-tab="literature">
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name_full">{+{name}+}</span>
+		</h1>
+		<div class="add-taxon-lit-data" data-is-taxon="true"><i class="fa fa-plus"></i> Add literature data</div>
+	</div>
+	<div class="hr"></div>
+	<div class="block35">
+		<div class="form-literature-data-holder"></div>
+	</div>
+</div>
+
+<div class="modal_tab" data-tab="pictures">
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name_full">{+{name}+}</span>
+		</h1>
+	</div>
+	<div class="hr"></div>
+	<div class="block35">
+		<div class="taxon-pictures-holder ">
+			<h3 class="traits-hl">Pictures:
+				<div class="load-pictures load-pictures-taxon"><i class="fa fa-upload"></i>&nbsp;&nbsp;Load pictures</div>
+				<div class="modify-pictures-trait"><i class="fa fa-edit"></i>&nbsp;&nbsp;Modify pictures</div>
+			</h3>
+			<div class="taxon-pictures any-pictures-holder row gallery_wrapper"></div>
+		</div>
+	</div>
+</div>
+

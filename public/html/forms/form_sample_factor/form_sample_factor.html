@@ -1,0 +1,163 @@
+<div class="insertIntoHeader">
+    <div data-tab="main" class="modal_tab_switcher active">Main</div>
+    <div data-tab="literature" class="modal_tab_switcher">Literature data</div>
+	<div data-tab="pictures" class="modal_tab_switcher">Pictures</div>
+<!--	<div data-tab="import" class="modal_tab_switcher active">Import</div>-->
+</div>
+
+<div class="modal_tab active" data-tab="main">
+    <div class="col-md-4">
+        <div class="vert-orient search-for-taxa-holder">
+            <h1 style="margin-top: 50px; ">Sample factors tree</h1>
+
+			<div class="fn-field category-filter-holder" style="padding: 0; padding-bottom: 15px;">
+				<select class="fn-control"></select>
+				<input type="text" class="factor-name-filter" style="margin-top: 10px;" placeholder="Type in factor name">
+			</div>
+
+            <div class="sf_switcher_holder"></div>
+        </div>
+    </div>
+    <div class="col-md-8">
+
+        <h1  class="name-place">{+{name}+}</h1>
+
+        <div class="top-taxon-holder"></div>
+
+        <div class="hr"></div>
+
+        <div class="row">
+	        <div class="col-md-6">
+		        <div class="vert-orient">{{{name}}}</div>
+		        <div class="vert-orient">{{{sample_factor_type}}}</div>
+		        <div class="vert-orient">{{{measurement_protocol}}}</div>
+				<div class="vert-orient">{{{source}}}</div>
+				<div class="vert-orient hidden_fields" data-type="FLOAT">{{{default_unit}}}</div>
+	        </div>
+	        <div class="col-md-6">
+		        <div class="vert-orient">{{{category}}}</div>
+		        <div class="vert-orient">{{{cluster}}}</div>
+				<div class="vert-orient">{{{external_id}}}</div>
+				<div class="vert-orient hidden_fields" data-type="TEXT">{{{max_characters}}}</div>
+		        <div class="vert-orient hidden_fields" data-type="NUMBER">{{{min_value}}}</div>
+		        <div class="vert-orient hidden_fields" data-type="NUMBER">{{{max_value}}}</div>
+	        </div>
+        </div>
+
+	    <div class="row">
+		    <div class="col-md-12">
+			    <div class="vert-orient">{{{definition}}}</div>
+		    </div>
+	    </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="trait-select-values-holder hidden_fields" data-type="SELECT">
+                    <div class="add-trait-value"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add value</div>
+                    <div class="trait-select-value-add-holder-content"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal_tab" data-tab="literature">
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name_full">{+{name}+}</span>
+		</h1>
+		<div class="add-taxon-lit-data" data-is-taxon="true"><i class="fa fa-plus"></i> Add literature data</div>
+	</div>
+	<div class="hr"></div>
+	<div class="block35">
+		<div class="form-literature-data-holder"></div>
+	</div>
+</div>
+
+<div class="modal_tab" data-tab="pictures">
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name_full">{+{name}+}</span>
+		</h1>
+	</div>
+	<div class="hr"></div>
+	<div class="block35">
+		<div class="taxon-pictures-holder ">
+			<h3 class="traits-hl">Pictures:
+				<div class="load-pictures load-pictures-taxon"><i class="fa fa-upload"></i>&nbsp;&nbsp;Load pictures</div>
+				<div class="modify-pictures-trait"><i class="fa fa-edit"></i>&nbsp;&nbsp;Modify pictures</div>
+			</h3>
+			<div class="taxon-pictures any-pictures-holder row gallery_wrapper"></div>
+		</div>
+	</div>
+</div>
+
+<link rel="stylesheet" href="../../../assets/checkNamesViaGBIF/styles.css" />
+
+<div class="modal_tab" data-tab="import">
+	<div class="ch_wrapper">
+		<div class="ch_header">
+			<div class="ch_button" id="ch_upload_file">
+				<div class="title">Выберите файл</div>
+<!--				<input type="file" id="ch_upload_file_input">-->
+			</div>
+			<div class="ch_button" id="download_file">
+				<div class="title">Скачать файл</div>
+			</div>
+			<div class="ct-pagination-wrapper">
+				<div class="ct-pagination-item ct-pagination-prev">
+					<img src="http://ecotaxonomy.org:443/assets/checkNamesViaGBIF/images/angle_left.svg" />
+				</div>
+				<div class="ct-pagination-current">
+					<input type="text" class="ct-pagination-current-input" value="1">
+				</div>
+				<div class="ct-pagination-item ct-pagination-next">
+					<img src="http://ecotaxonomy.org:443/assets/checkNamesViaGBIF/images/angle_right.svg" />
+				</div>
+				<div class="ct-pagination-pagesCount">Страницы: 1</div>
+			</div>
+		</div>
+		<div class="ch_status hidden">
+			<div class="ch_loader hidden">
+				<img src="http://ecotaxonomy.org:443/assets/checkNamesViaGBIF/images/loader.svg" />
+			</div>
+			<div class="ch_status_message">Processing...</div>
+		</div>
+		<div class="ch_table">
+			<table>
+				<thead>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="ch_box_wrapper hidden">
+		<div class="ch_box">
+			<div class="header">Araneidae</div>
+			<div class="search">
+				<input id="ch_box_input" type="text" placeholder="Поиск по видам" />
+				<img src="http://ecotaxonomy.org:443/assets/checkNamesViaGBIF/images/search_icon.svg" />
+			</div>
+			<ul></ul>
+			<div class="buttons">
+				<div class="ch_button" id="ch_box_cancel">
+					<div class="title">Отменить</div>
+				</div>
+				<div class="ch_button" id="ch_box_apply">
+					<div class="title">Применить</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="td_content_editing sample">
+		<input class="td_content_input" />
+		<div class="td_content_save">
+			<img title="Сохранить" src="http://ecotaxonomy.org:443/assets/checkNamesViaGBIF/images/save_icon.svg" />
+		</div>
+		<div class="td_content_save save_all" title="Обновить всю колонку">
+			<img src="http://ecotaxonomy.org:443/assets/checkNamesViaGBIF/images/edit_row.svg" />
+		</div>
+	</div>
+</div>

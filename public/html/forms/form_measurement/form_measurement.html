@@ -1,0 +1,124 @@
+<div class="insertIntoHeader">
+    <div data-tab="main" class="modal_tab_switcher active">Main</div>
+    <div data-tab="literature" class="modal_tab_switcher">Literature data</div>
+    <div data-tab="pictures" class="modal_tab_switcher">Pictures</div>
+</div>
+
+<div class="modal_tab active" data-tab="main">
+	<div class="row">
+	    <div class="col-md-4">
+
+	        <div class="search-for-taxa-holder">
+	            <h1 style="margin-top: 50px; ">Taxonomy tree</h1>
+
+	            <div class="s-f-t-text">Use traits tree to switch between taxons</div>
+
+	            <div class="tree-holder">
+	                <div class="traits-tree-holder">
+
+	                </div>
+	                <div class="tree-traits-holder">
+
+	                </div>
+	            </div>
+
+
+	        </div>
+
+
+
+	    </div>
+	    <div class="col-md-7">
+
+	        <h1  class="name-place">{+{name}+}</h1>
+
+	        <div class="top-taxon-holder"></div>
+
+	        <div class="hr"></div>
+
+	        <div class="row">
+	            <div class="col-md-6">
+	                <div class="vert-orient">{{{name}}}</div>
+	                <div class="vert-orient">{{{project}}}</div>
+	                <div class="vert-orient">{{{taxon}}}</div>
+		            <div class="vert-orient">{{{measurement_protocol}}}</div>
+					<div class="vert-orient">{{{source}}}</div>
+		            <div class="vert-orient hidden_fields" data-type="NUMBER">{{{min_value1}}}</div>
+					<div class="vert-orient hidden_fields" data-type="FLOAT">{{{default_unit}}}</div>
+	            </div>
+	            <div class="col-md-6">
+		            <div class="vert-orient">{{{type}}}</div>
+		            <div class="vert-orient">{{{category}}}</div>
+		            <div class="vert-orient">{{{cluster}}}</div>
+					<div class="vert-orient">{{{external_id}}}</div>
+					<div class="vert-orient hidden_fields" data-type="TEXT">{{{max_characters}}}</div>
+		            <div class="vert-orient hidden_fields" data-type="NUMBER">{{{value1_step}}}</div>
+		            <div class="vert-orient hidden_fields" data-type="NUMBER">{{{max_value1}}}</div>
+	                <!--<div class="vert-orient hidden_fields" data-type="NUMBER">{{{min_value2}}}</div>-->
+	                <!--<div class="vert-orient hidden_fields" data-type="NUMBER">{{{max_value2}}}</div>-->
+	                <!--<div class="vert-orient hidden_fields" data-type="NUMBER">{{{value2_step}}}</div>-->
+	            </div>
+	        </div>
+
+	        <div class="row">
+	            <div class="col-md-12">
+	                <div class="vert-orient">{{{definition}}}</div>
+	            </div>
+	        </div>
+
+	        <!--<div class="taxon-pictures-holder " style="padding-left: 35px;">-->
+	            <!--<h3 class="traits-hl">Pictures:-->
+	                <!--<div class="load-pictures load-pictures-taxon"><i class="fa fa-upload"></i>&nbsp;&nbsp;Load pictures</div>-->
+	                <!--<div class="modify-pictures-trait"><i class="fa fa-edit"></i>&nbsp;&nbsp;Modify pictures</div>-->
+	            <!--</h3>-->
+	            <!--<div class="taxon-pictures any-pictures-holder row gallery_wrapper">-->
+
+	            <!--</div>-->
+	        <!--</div>-->
+
+	        <div class="row">
+	            <div class="col-md-12">
+	                <div class="trait-select-values-holder hidden_fields" data-type="SELECT">
+	                    <div class="add-trait-value"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add value</div>
+	                    <div class="trait-select-value-add-holder-content"></div>
+	                </div>
+	            </div>
+	        </div>
+
+
+
+
+	    </div>
+	</div>
+</div>
+
+<div class="modal_tab" data-tab="literature">
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name_full">{+{name}+}</span>
+		</h1>
+		<div class="add-taxon-lit-data" data-is-taxon="true"><i class="fa fa-plus"></i> Add literature data</div>
+	</div>
+	<div class="hr"></div>
+	<div class="block35">
+		<div class="form-literature-data-holder"></div>
+	</div>
+</div>
+
+<div class="modal_tab" data-tab="pictures">
+	<div class="block35">
+		<h1 class="name-place">
+			<span class="fn-inline-field" data-column="name_full">{+{name}+}</span>
+		</h1>
+	</div>
+	<div class="hr"></div>
+	<div class="block35">
+		<div class="taxon-pictures-holder ">
+			<h3 class="traits-hl">Pictures:
+				<div class="load-pictures load-pictures-taxon"><i class="fa fa-upload"></i>&nbsp;&nbsp;Load pictures</div>
+				<div class="modify-pictures-trait"><i class="fa fa-edit"></i>&nbsp;&nbsp;Modify pictures</div>
+			</h3>
+			<div class="taxon-pictures any-pictures-holder row gallery_wrapper"></div>
+		</div>
+	</div>
+</div>

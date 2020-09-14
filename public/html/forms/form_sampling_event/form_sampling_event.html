@@ -1,0 +1,61 @@
+<div class="insertIntoHeader">
+    <div data-tab="main" class="modal_tab_switcher active">Main</div>
+    <div data-tab="pictures" class="modal_tab_switcher">Pictures</div>
+</div>
+
+
+<div class="modal_tab active" data-tab="main">
+    <div class="block35">
+        <h1 class="name-place">Sampling event: {+{name}+}</h1>
+    </div>
+    <div class="hr"></div>
+    <div class="col-md-3">
+        <div class="se-switcher-holder-title">Project sampling events:</div>
+        <div class="se-switcher-holder"></div>
+    </div>
+    <div class="col-md-9">
+	    <div class="col-md-6">
+		    <div class="vert-orient">{{{name}}}</div>
+		    <div class="vert-orient">{{{datetime_start}}}</div>
+		    <div class="vert-orient">{{{datetime_end}}}</div>
+		    <div class="vert-orient">{{{storage}}}</div>
+		    <div class="vert-orient">{{{plot}}}</div>
+		    <div class="vert-orient">{{{latitude}}}</div>
+		    <div class="vert-orient">{{{longitude}}}</div>
+		    <div class="vert-orient">{{{coordinate_uncertainty}}}</div>
+	    </div>
+	    <div class="col-md-6">
+		    <div class="vert-orient">{{{parent_name}}}</div>
+		    <div class="vert-orient">{{{project_name}}}</div>
+		    <div class="vert-orient">{{{location}}}</div>
+		    <div class="vert-orient">{{{habitat}}}</div>
+		    <div class="vert-orient">{{{samples_size}}}</div>
+		    <div class="vert-orient">{{{meas_unit_sign}}}</div>
+		    <div class="vert-orient">{{{description}}}</div>
+	    </div>
+        <div class="block35">
+	        <br>
+            <div data-tbls="sample.tbl_sample,sampling_event_member.tbl_sampling_event_member" class="fn-child-tbl-holder marTop10"></div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal_tab" data-tab="pictures">
+    <div class="block35">
+        <h1 class="name-place">Sampling event: {+{name}+}</h1>
+    </div>
+    <div class="hr"></div>
+    <div class="block35">
+        <div class="taxon-pictures-holder ">
+            <h3 class="traits-hl">Pictures:
+                <div class="load-pictures load-pictures-taxon"><i class="fa fa-upload"></i>&nbsp;&nbsp;Load pictures</div>
+                <div class="modify-pictures-trait"><i class="fa fa-edit"></i>&nbsp;&nbsp;Modify pictures</div>
+            </h3>
+            <div class="taxon-pictures any-pictures-holder row gallery_wrapper"></div>
+        </div>
+    </div>
+</div>
+
+
+

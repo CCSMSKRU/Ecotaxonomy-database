@@ -1,0 +1,49 @@
+<div class="insertIntoHeader">
+    <div data-tab="main" class="modal_tab_switcher active">Main</div>
+</div>
+
+<div class="modal_tab active" data-tab="main">
+        <div class="col-md-4">
+            <div class="vert-orient search-for-taxa-holder">
+                <h1 style="margin-top: 50px; ">Primer pair</h1>
+
+                <div class="fn-field filter-holder" style="padding: 0; padding-bottom: 15px;">
+                    <select class="fn-control sequence-filter"></select>
+                    <select class="fn-control molecule-type-filter"></select>
+                    <select class="fn-control sequencing-method-filter"></select>
+                    <input type="text" class="name-filter" style="margin-top: 10px;" placeholder="Type in primer pair name">
+                </div>
+                <div class="primer_switcher_holder"></div>
+                <div class="btn btn-green add-new-primer">Add new primer</div>
+            </div>
+        </div>
+    <div class="col-md-8">
+        <h1  class="name-place">{+{name}+}</h1>
+        <div class="hr"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="vert-orient">{{{name}}}</div>
+<!--                <div class="vert-orient">{{{sequence_name}}}</div>-->
+                <div class="vert-orient">{{{target_gene_name}}}</div>
+                <div class="vert-orient">{{{target_gene_type_name}}}</div>
+                <div class="vert-orient">{{{protein_coding}}}</div>
+                <div class="vert-orient">{{{sequencing_method_name}}}</div>
+                <div class="vert-orient">{{{forward_sequence}}}</div>
+                <div class="vert-orient">{{{reverse_sequence}}}</div>
+                <div class="vert-orient">{{{annealing}}}</div>
+            </div>
+            <div class="col-md-6 holder-interface-primer-taxons">
+                <div class="list-interface-primer-taxon"></div>
+                <div class="btn btn-green formation-interface-primer-taxon">Link primer to taxon(s)</div>
+                <div class="btn btn-green changes-btn-interface" style="float: right">Save</div>
+                <div class="holder-for-name-fileds">
+                    <div class="name-field-primer-taxon-annealing">Annealing temperature</div>
+                    <div class="name-field-primer-to-taxon">Taxon</div>
+                </div>
+                <div class="interface-primer-taxon">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
