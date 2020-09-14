@@ -12,6 +12,7 @@ var funcs = require('../libs/functions');
 var moment = require('moment');
 var ToExcel = require('../libs/ToExcel.js');
 
+
 var Model = function(obj){
     this.name = obj.name;
     this.tableName = obj.name.toLowerCase();
