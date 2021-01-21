@@ -44,7 +44,7 @@
     "rubles": "^0.2.0",
     "serve-favicon": "^2.5.0",
     "sharp": "^0.25.4",
-    "socket.io": "^1.4.5",
+    "socket.io": "^2.4.0",
     "socket.io-client-cookies-headers": "^0.4.2",
     "xlsx-template": "^0.5.0"
   }
