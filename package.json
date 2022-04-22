@@ -35,7 +35,7 @@
     "mustache": "^3.0.1",
     "mysql": "^2.16.0",
     "mysql-utilities": "^1.0.13",
-    "nconf": "^0.10.0",
+    "nconf": "^0.11.4",
     "nodemailer": "^4.7.0",
     "parse-filepath": "^1.0.2",
     "pdfkit": "^0.8.2",
