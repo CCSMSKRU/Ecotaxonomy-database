@@ -15,7 +15,7 @@
     "crypto": "0.0.3",
     "debug": "~2.1.1",
     "delivery": "0.0.4",
-    "docxtemplater": "^3.9.4",
+    "docxtemplater": "^3.31.5",
     "exceljs": "^1.6.3",
     "express": "^4.13.4",
     "express-mysql-session": "^0.4.4",
